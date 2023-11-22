@@ -8,6 +8,7 @@ import Auth from './components/Auth.jsx'
 import Blogs from './components/Blogs.jsx'
 
 function App() {
+  
   return (
     <>
     <header>
