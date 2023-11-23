@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 function Header(props) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   function handleLogout() {
     localStorage.clear();
@@ -18,6 +18,7 @@ function Header(props) {
             <Tabs textColor='inherit' value={value} onChange={(e, val) => setValue(val)}>
               <Tab LinkComponent={Link} to="/blogs" label="All Blogs" />
               <Tab LinkComponent={Link} to="/myBlogs" label="My Blogs" />
+              <Tab LinkComponent={Link} to="/blogs/add" label="Add Blogs" />
             </Tabs>
           </Box>
         }
