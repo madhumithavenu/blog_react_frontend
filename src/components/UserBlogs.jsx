@@ -15,6 +15,7 @@ function UserBlog() {
     return data;
   }
 
+  
   useEffect(() => {
     sendRequest()
       .then((data) => setBlogs(data.user.blogs))
