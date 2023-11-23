@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Blog from './Blog';
 
 function UserBlog() {
-  const [blogs, setBlogs] = useState([]);
+  const [user, setUser] = useState();
   const id = localStorage.getItem("userID");
 
   async function sendRequest() {
@@ -15,21 +15,21 @@ function UserBlog() {
     return data;
   }
 
-  
   useEffect(() => {
     sendRequest()
-      .then((data) => setBlogs(data.user.blogs))
+      .then((data) => setUser(data.user))
   }, [])
-
 
   return (
     <>
-      {(blogs.length !== 0) && blogs.map((blog, index)=>(
-        <Blog
-        user={blog.user.name}
-        description={blog.description}
-        imageURL={blog.image}
-        title={blog.title} />
+      {" "}
+      {user && user.blogs && user.blogs.map((blog, index) => (
+        <Blog key={index}
+          isUser={true}
+          user={user.name}
+          description={blog.description}
+          imageURL={blog.image}
+          title={blog.title} />
       ))}
     </>
   )
