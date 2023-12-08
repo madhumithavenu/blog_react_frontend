@@ -11,8 +11,9 @@ function Blogs() {
       .get(`http://localhost:5000/api/blog`)
       .catch(err => console.log(err))
     const data = await res.data;
+    console.log(data);
     return data;
-  }
+    }
   useEffect(() => {
     sendRequest()
       .then(data => setBlogs(data.blogs));

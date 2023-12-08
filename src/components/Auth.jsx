@@ -39,6 +39,7 @@ function Auth(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(inputs);
     if (isSignup) {
       sendRequest("signup")
         .then(data => navigate("/auth"))
